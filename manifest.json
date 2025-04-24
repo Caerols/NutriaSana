@@ -1,0 +1,15 @@
+{
+  "name": "NutriaSana",
+  "short_name": "NutriaSana",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1976d2",
+  "icons": [
+    {
+      "src": "img/dumbbel-svgrepo-com.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}

@@ -27,20 +27,66 @@ document.querySelectorAll(".nav-link").forEach(link => {
 
 function guardarHistorial(datos) {
   const historial = JSON.parse(localStorage.getItem("historialCalorias")) || [];
-  historial.unshift({ ...datos, nombre: username });
+  const id = Date.now(); // ID único basado en el tiempo
+  historial.unshift({ id, ...datos, nombre: username });
   localStorage.setItem("historialCalorias", JSON.stringify(historial.slice(0, 10)));
   mostrarHistorial();
 }
 
+
 function mostrarHistorial() {
   const historial = JSON.parse(localStorage.getItem("historialCalorias")) || [];
   const historyList = document.getElementById("historyList");
-  historyList.innerHTML = "";
-  historial.forEach(entry => {
-    const li = document.createElement("li");
-    li.innerHTML = `<strong>${entry.nombre}</strong> | ${entry.fecha} — ${entry.calorias} cal | IMC: ${entry.imc} (${entry.imcCategoria})`;
-    historyList.appendChild(li);
-  });
+  historyList.innerHTML = `
+    <table class="tabla-historial">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Fecha</th>
+          <th>Calorías</th>
+          <th>IMC</th>
+          <th>IMM</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${historial.map(entry => {
+          const fecha = entry.fecha.split(',')[0];
+          return `
+            <tr>
+              <td>${entry.nombre}</td>
+              <td>${fecha}</td>
+              <td>${entry.calorias} cal</td>
+              <td>${entry.imc}</td>
+              <td>${entry.imm}</td>
+              <td>
+                <button onclick="editarEntrada(${entry.id})">✏️</button>
+                <button onclick="eliminarEntrada(${entry.id})">🗑</button>
+              </td>
+            </tr>`;
+        }).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function eliminarEntrada(id) {
+  const historial = JSON.parse(localStorage.getItem("historialCalorias")) || [];
+  const actualizado = historial.filter(e => e.id !== id);
+  localStorage.setItem("historialCalorias", JSON.stringify(actualizado));
+  mostrarHistorial();
+}
+
+function editarEntrada(id) {
+  const historial = JSON.parse(localStorage.getItem("historialCalorias")) || [];
+  const entrada = historial.find(e => e.id === id);
+  if (!entrada) return;
+
+  document.getElementById("weight").value = entrada.peso || '';
+  document.getElementById("height").value = entrada.altura || '';
+  document.getElementById("age").value = entrada.edad || '';
+
+  mostrarSeccion("calculadora");
 }
 
 function borrarHistorial() {
@@ -199,3 +245,12 @@ document.getElementById("calorieForm").addEventListener("submit", function (e) {
     ejercicioFuerza
   });
 });
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(reg => console.log("✅ Service worker registrado"))
+    .catch(err => console.error("❌ Error al registrar service worker:", err));
+}
+
+
+window.addEventListener("load", mostrarHistorial);
+

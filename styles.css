@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f3f6fb;
+  color: #333;
+}
+
+.navbar {
+  background: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-weight: 600;
+  font-size: 20px;
+  color: #1976d2;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #1976d2;
+}
+
+.dashboard {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.hidden {
+  display: none !important;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group,
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+button {
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+button:hover {
+  background-color: #125aa5;
+}
+
+#result {
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+#result h3 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #1976d2;
+  padding-bottom: 5px;
+  color: #1976d2;
+}
+
+#result table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+#result table th,
+#result table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+#result table th {
+  background-color: #e8f0fe;
+  color: #1976d2;
+}
+
+.imm-descripcion {
+  background-color: #e3f2fd;
+  border-left: 4px solid #1976d2;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+}
+
+#historyList {
+  list-style: none;
+  padding-left: 0;
+}
+
+#historyList li {
+  background: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-family: monospace;
+}

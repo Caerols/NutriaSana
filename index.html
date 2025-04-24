@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Calorías</title>
+  <link rel="icon" href="img/dumbbel-svgrepo-com.svg" type="imagen-icono">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo"><a href="index.html" class="nav-link active" data-section="historial">NutriaSana</a></div>
+    <ul class="nav-links">
+      <li><a href="#" class="nav-link active" data-section="calculadora">Calculadora</a></li>
+      <li><a href="#" class="nav-link" data-section="historial">Historial</a></li>
+    </ul>
+  </nav>
+
+  <main class="dashboard">
+    <section id="bienvenida" class="card">
+      <h2>¡Bienvenido!</h2>
+      <p>Ingresa tu nombre para comenzar:</p>
+      <input type="text" id="username" placeholder="Tu nombre" />
+      <button onclick="iniciarApp()">Entrar</button>
+    </section>
+
+    <section id="calculadora" class="card hidden">
+      <h2 id="tituloUsuario">Calculadora de Calorías</h2>
+      <form id="calorieForm">
+        <div class="form-group">
+          <label for="sex">Sexo</label>
+          <select id="sex" required>
+            <option value="male">Masculino</option>
+            <option value="female">Femenino</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="age">Edad</label>
+          <input type="number" id="age" required>
+        </div>
+
+        <div class="form-row">
+          <label for="weight">Peso (kg)</label>
+          <input type="number" id="weight" required>
+        </div>
+
+        <div class="form-row">
+          <label for="height">Altura (cm)</label>
+          <input type="number" id="height" required>
+        </div>
+
+        <div class="form-group">
+          <label for="activity">Nivel de Actividad</label>
+          <select id="activity" required>
+            <option value="sedentary">Sedentario</option>
+            <option value="light">Ligero (1-3) DIAS</option>
+            <option value="moderate">Moderado (3-5) DIAS</option>
+            <option value="intense">Intenso (5-7) DIAS</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="goal">Objetivo</label>
+          <select id="goal" required>
+            <option value="maintain">Mantener peso</option>
+            <option value="gain">Ganar masa muscular</option>
+            <option value="lose">Perder grasa</option>
+          </select>
+        </div>
+
+        <div id="deficitOptions" class="form-group hidden">
+          <label for="deficit">Déficit</label>
+          <select id="deficit">
+            <option value="light">Ligero (5%)</option>
+            <option value="moderate">Moderado (10%)</option>
+            <option value="aggressive">Agresivo (15%)</option>
+            <option value="veryAggressive">Muy agresivo (20%)</option>
+          </select>
+        </div>
+
+        <div id="surplusOptions" class="form-group hidden">
+          <label for="surplus">Superávit</label>
+          <select id="surplus">
+            <option value="light">Ligero (5%)</option>
+            <option value="moderate">Moderado (10%)</option>
+            <option value="aggressive">Agresivo (15%)</option>
+            <option value="veryAggressive">Muy agresivo (20%)</option>
+          </select>
+        </div>
+
+        <button type="submit">Calcular</button>
+      </form>
+      <div id="result" class="result-card"></div>
+    </section>
+
+    <section id="historial" class="card hidden">
+      <h2>Historial de Resultados</h2>
+      <ul id="historyList"></ul>
+      <button onclick="borrarHistorial()">🗑 Borrar Historial</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

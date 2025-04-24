@@ -159,3 +159,44 @@ button:hover {
   font-size: 14px;
   font-family: monospace;
 }
+
+.tabla-historial {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.tabla-historial th,
+.tabla-historial td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.tabla-historial th {
+  background-color: #e8f0fe;
+  color: #1976d2;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 22px;
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.nav-logo .nav-link {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 0 2px #1976d2);
+}

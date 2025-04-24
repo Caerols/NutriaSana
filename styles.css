@@ -7,8 +7,9 @@ body {
 
 .navbar {
   background: #ffffff;
-  padding: 15px 30px;
+  padding: 10px 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -18,10 +19,16 @@ body {
 }
 
 .nav-logo {
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
   font-size: 20px;
   color: #1976d2;
+  text-decoration: none;
+  flex-shrink: 1;
 }
+
 
 .nav-links {
   list-style: none;
@@ -181,12 +188,15 @@ button:hover {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 20px;
   color: #1976d2;
   text-decoration: none;
+  flex-shrink: 1;
 }
+
+
 
 .nav-logo .nav-link {
   font-size: 22px;
@@ -196,7 +206,45 @@ button:hover {
 }
 
 .logo-icon {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   filter: drop-shadow(0 0 2px #1976d2);
+  flex-shrink: 0;
+}
+
+.dashboard {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+/* Hacer que la tabla del historial se desplace horizontalmente en pantallas pequeñas */
+#historyList {
+  overflow-x: auto;
+}
+
+.tabla-historial {
+  width: 100%;
+  min-width: 600px; /* fuerza el scroll horizontal si la pantalla es más chica */
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.tabla-historial th,
+.tabla-historial td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.tabla-historial th {
+  background-color: #e8f0fe;
+  color: #1976d2;
+}
+@media (max-width: 500px) {
+  .tabla-historial th, .tabla-historial td {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
 }

@@ -29,6 +29,23 @@ body {
   flex-shrink: 1;
 }
 
+.nav-logo .nav-link {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1976d2;
+  text-decoration: none;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 2px #1976d2);
+  flex-shrink: 0;
+}
 
 .nav-links {
   list-style: none;
@@ -51,9 +68,9 @@ body {
 }
 
 .dashboard {
-  max-width: 960px;
-  margin: 40px auto;
-  padding: 0 20px;
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 0 15px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -152,79 +169,17 @@ button:hover {
   color: #333;
 }
 
-#historyList {
-  list-style: none;
-  padding-left: 0;
-}
-
-#historyList li {
-  background: #f9f9f9;
-  padding: 10px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  font-family: monospace;
-}
-
-.tabla-historial {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-}
-
-.tabla-historial th,
-.tabla-historial td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  font-size: 14px;
-  text-align: left;
-}
-
-.tabla-historial th {
-  background-color: #e8f0fe;
-  color: #1976d2;
-}
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 700;
-  font-size: 20px;
-  color: #1976d2;
-  text-decoration: none;
-  flex-shrink: 1;
-}
-
-
-
-.nav-logo .nav-link {
-  font-size: 22px;
-  font-weight: 700;
-  color: #1976d2;
-  text-decoration: none;
-}
-
-.logo-icon {
-  width: 24px;
-  height: 24px;
-  filter: drop-shadow(0 0 2px #1976d2);
-  flex-shrink: 0;
-}
-
-.dashboard {
-  max-width: 100%;
-  margin: 20px auto;
-  padding: 0 15px;
-}
-/* Hacer que la tabla del historial se desplace horizontalmente en pantallas pequeñas */
+/* Historial */
 #historyList {
   overflow-x: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding-bottom: 8px;
 }
 
 .tabla-historial {
   width: 100%;
-  min-width: 600px; /* fuerza el scroll horizontal si la pantalla es más chica */
+  min-width: 600px;
   border-collapse: collapse;
   margin-top: 15px;
   font-size: 14px;
@@ -242,6 +197,23 @@ button:hover {
   background-color: #e8f0fe;
   color: #1976d2;
 }
+
+.tabla-historial button {
+  background-color: #e3f2fd;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin: 0 2px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.tabla-historial button:hover {
+  background-color: #bbdefb;
+  transform: scale(1.05);
+}
+
 @media (max-width: 500px) {
   .tabla-historial th, .tabla-historial td {
     padding: 8px 6px;

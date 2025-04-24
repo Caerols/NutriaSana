@@ -7,10 +7,15 @@
   <link rel="icon" href="img/dumbbel-svgrepo-com.svg" type="imagen-icono">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+
 </head>
 <body>
   <nav class="navbar">
-    <div class="nav-logo"><a href="index.html" class="nav-link active" data-section="historial">NutriaSana</a></div>
+    <div class="nav-logo">
+        <img src="img/dumbbel-svgrepo-com.svg" alt="logo" class="logo-icon">
+        <a href="#" class="nav-link" data-section="bienvenida">NutriaSana</a>
+      </div>
     <ul class="nav-links">
       <li><a href="#" class="nav-link active" data-section="calculadora">Calculadora</a></li>
       <li><a href="#" class="nav-link" data-section="historial">Historial</a></li>
@@ -79,7 +84,7 @@
             <option value="veryAggressive">Muy agresivo (20%)</option>
           </select>
         </div>
-
+        
         <div id="surplusOptions" class="form-group hidden">
           <label for="surplus">Superávit</label>
           <select id="surplus">
